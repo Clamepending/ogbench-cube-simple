@@ -22,7 +22,7 @@ def _device() -> torch.device:
 class BCTrainer:
     def __init__(self, obs_dim: int, act_dim: int, seed: int = 0):
         self.device = _device()
-        self.actor = DeterministicActor(obs_dim, act_dim, hidden=(256, 256, 256)).to(self.device)
+        self.actor = DeterministicActor(obs_dim, act_dim, hidden=(512, 512, 512)).to(self.device)
         self.opt = torch.optim.Adam(self.actor.parameters(), lr=3e-4)
 
     def config(self) -> dict:
@@ -33,7 +33,7 @@ class BCTrainer:
             "eval_episodes": 50,
             "batch_size": 256,
             "lr": 3e-4,
-            "hidden": [256, 256, 256],
+            "hidden": [512, 512, 512],
             "device": str(self.device),
         }
 
