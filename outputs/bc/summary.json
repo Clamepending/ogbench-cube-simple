@@ -1,0 +1,13 @@
+{
+  "variant": "bc",
+  "n_seeds": 3,
+  "eval_return_mean": -195.4333333333333,
+  "eval_return_std": 4.898258193820879,
+  "eval_success_rate_mean": 0.06666666666666667,
+  "eval_success_rate_std": 0.08326663997864531,
+  "seeds": [
+    0,
+    1,
+    2
+  ]
+}

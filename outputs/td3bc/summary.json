@@ -1,0 +1,13 @@
+{
+  "variant": "td3bc",
+  "n_seeds": 3,
+  "eval_return_mean": -200.0,
+  "eval_return_std": 0.0,
+  "eval_success_rate_mean": 0.0,
+  "eval_success_rate_std": 0.0,
+  "seeds": [
+    0,
+    1,
+    2
+  ]
+}

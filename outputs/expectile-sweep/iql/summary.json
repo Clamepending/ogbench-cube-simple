@@ -1,0 +1,13 @@
+{
+  "variant": "iql",
+  "n_seeds": 3,
+  "eval_return_mean": -122.32,
+  "eval_return_std": 9.024256202036822,
+  "eval_success_rate_mean": 0.52,
+  "eval_success_rate_std": 0.05999999999999997,
+  "seeds": [
+    0,
+    1,
+    2
+  ]
+}

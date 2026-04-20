@@ -1,0 +1,107 @@
+{
+  "variant": "bc",
+  "seed": 1,
+  "steps": 200000,
+  "train_seconds": 503.215610709005,
+  "eval_return_mean": -190.26,
+  "eval_return_std": 26.647977294300425,
+  "eval_success_rate": 0.16,
+  "eval_episode_len_mean": 190.42,
+  "n_eval_episodes": 50,
+  "eval_log": [
+    {
+      "eval_return_mean": -199.96,
+      "eval_return_std": 0.282842712474619,
+      "eval_success_rate": 0.02,
+      "eval_episode_len_mean": 199.98,
+      "n_episodes": 50,
+      "step": 20000
+    },
+    {
+      "eval_return_mean": -175.98,
+      "eval_return_std": 44.37800981456966,
+      "eval_success_rate": 0.3,
+      "eval_episode_len_mean": 176.28,
+      "n_episodes": 50,
+      "step": 40000
+    },
+    {
+      "eval_return_mean": -182.92,
+      "eval_return_std": 44.42275570571681,
+      "eval_success_rate": 0.16,
+      "eval_episode_len_mean": 183.08,
+      "n_episodes": 50,
+      "step": 60000
+    },
+    {
+      "eval_return_mean": -200.0,
+      "eval_return_std": 0.0,
+      "eval_success_rate": 0.0,
+      "eval_episode_len_mean": 200.0,
+      "n_episodes": 50,
+      "step": 80000
+    },
+    {
+      "eval_return_mean": -197.34,
+      "eval_return_std": 9.246312006107393,
+      "eval_success_rate": 0.12,
+      "eval_episode_len_mean": 197.46,
+      "n_episodes": 50,
+      "step": 100000
+    },
+    {
+      "eval_return_mean": -197.28,
+      "eval_return_std": 13.472632880572894,
+      "eval_success_rate": 0.1,
+      "eval_episode_len_mean": 197.38,
+      "n_episodes": 50,
+      "step": 120000
+    },
+    {
+      "eval_return_mean": -174.86,
+      "eval_return_std": 46.92156285999529,
+      "eval_success_rate": 0.26,
+      "eval_episode_len_mean": 175.12,
+      "n_episodes": 50,
+      "step": 140000
+    },
+    {
+      "eval_return_mean": -188.68,
+      "eval_return_std": 29.42402183972289,
+      "eval_success_rate": 0.22,
+      "eval_episode_len_mean": 188.9,
+      "n_episodes": 50,
+      "step": 160000
+    },
+    {
+      "eval_return_mean": -188.16,
+      "eval_return_std": 32.04929876019767,
+      "eval_success_rate": 0.16,
+      "eval_episode_len_mean": 188.32,
+      "n_episodes": 50,
+      "step": 180000
+    },
+    {
+      "eval_return_mean": -190.26,
+      "eval_return_std": 26.647977294300425,
+      "eval_success_rate": 0.16,
+      "eval_episode_len_mean": 190.42,
+      "n_episodes": 50,
+      "step": 200000
+    }
+  ],
+  "config": {
+    "algo": "bc",
+    "steps": 200000,
+    "eval_every": 20000,
+    "eval_episodes": 50,
+    "batch_size": 256,
+    "lr": 0.0003,
+    "hidden": [
+      256,
+      256,
+      256
+    ],
+    "device": "mps"
+  }
+}
