@@ -72,8 +72,8 @@ class ReBRACTrainer:
         self.policy_noise = 0.2
         self.noise_clip = 0.5
         self.policy_delay = 2
-        self.beta_actor = 0.01   # actor-side BC penalty
-        self.beta_critic = 0.01  # critic-side BC penalty on target action
+        self.beta_actor = 1.0    # actor-side BC penalty (cycle 2: anchor strongly on sparse reward)
+        self.beta_critic = 0.1   # critic-side BC penalty on target action
         self._step = 0
 
     def config(self) -> dict:
@@ -89,8 +89,8 @@ class ReBRACTrainer:
             "policy_noise": 0.2,
             "noise_clip": 0.5,
             "policy_delay": 2,
-            "beta_actor": 0.01,
-            "beta_critic": 0.01,
+            "beta_actor": 1.0,
+            "beta_critic": 0.1,
             "hidden": [256, 256, 256],
             "critic_layernorm": True,
             "device": str(self.device),
