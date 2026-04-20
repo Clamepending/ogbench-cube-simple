@@ -54,10 +54,11 @@ class IQLTrainer:
         self.device = _device()
         self.act_dim = act_dim
 
-        self.actor = DeterministicActor(obs_dim, act_dim).to(self.device)
-        self.q = TwinQ(obs_dim, act_dim).to(self.device)
+        _hidden = (512, 512, 512)
+        self.actor = DeterministicActor(obs_dim, act_dim, hidden=_hidden).to(self.device)
+        self.q = TwinQ(obs_dim, act_dim, hidden=_hidden).to(self.device)
         self.q_tgt = copy.deepcopy(self.q).eval()
-        self.v = V(obs_dim).to(self.device)
+        self.v = V(obs_dim, hidden=_hidden).to(self.device)
 
         self.opt_a = torch.optim.Adam(self.actor.parameters(), lr=3e-4)
         self.opt_q = torch.optim.Adam(self.q.parameters(), lr=3e-4)
@@ -80,7 +81,7 @@ class IQLTrainer:
             "tau": 0.005,
             "expectile": 0.7,
             "awr_beta": 3.0,
-            "hidden": [256, 256, 256],
+            "hidden": [512, 512, 512],
             "device": str(self.device),
         }
 
