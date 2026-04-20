@@ -67,6 +67,7 @@ class IQLTrainer:
         self.tau = 0.005          # target network soft update rate
         self.expectile = 0.7      # τ in the paper; expectile for V(s)
         self.awr_beta = 3.0       # inverse-temperature for advantage weighting
+        self.reward_scale = 1.0 / 200.0  # sparse-reward normalization: rescale rew to O(1) magnitude
 
     def config(self) -> dict:
         return {
@@ -80,6 +81,7 @@ class IQLTrainer:
             "tau": 0.005,
             "expectile": 0.7,
             "awr_beta": 3.0,
+            "reward_scale": self.reward_scale,
             "hidden": [256, 256, 256],
             "device": str(self.device),
         }
@@ -110,7 +112,7 @@ class IQLTrainer:
         # Q: Bellman target uses V(s') (no policy evaluation at next state)
         with torch.no_grad():
             v_next = self.v(next_obs)
-            target = rew + self.gamma * mask * v_next
+            target = self.reward_scale * rew + self.gamma * mask * v_next
         q1, q2 = self.q(obs, act)
         q_loss = F.mse_loss(q1, target) + F.mse_loss(q2, target)
         self.opt_q.zero_grad(set_to_none=True)
