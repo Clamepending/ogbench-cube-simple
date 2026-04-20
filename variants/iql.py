@@ -65,7 +65,7 @@ class IQLTrainer:
 
         self.gamma = 0.99
         self.tau = 0.005          # target network soft update rate
-        self.expectile = 0.7      # τ in the paper; expectile for V(s)
+        self.expectile = 0.9      # τ in the paper; expectile for V(s)
         self.awr_beta = 3.0       # inverse-temperature for advantage weighting
 
     def config(self) -> dict:
@@ -78,7 +78,7 @@ class IQLTrainer:
             "lr": 3e-4,
             "gamma": 0.99,
             "tau": 0.005,
-            "expectile": 0.7,
+            "expectile": 0.9,
             "awr_beta": 3.0,
             "hidden": [256, 256, 256],
             "device": str(self.device),
