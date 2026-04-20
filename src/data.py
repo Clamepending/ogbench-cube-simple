@@ -34,10 +34,12 @@ class ReplayBatcher:
 
     def sample(self):
         idx = self.rng.integers(0, self.n, size=self.batch_size)
+        next_idx = np.minimum(idx + 1, self.n - 1)
         return {
             "obs": self.obs[idx],
             "act": self.act[idx],
             "rew": self.rew[idx],
             "next_obs": self.next_obs[idx],
             "mask": self.mask[idx],
+            "next_act": self.act[next_idx],
         }
