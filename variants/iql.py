@@ -66,7 +66,7 @@ class IQLTrainer:
         self.gamma = 0.99
         self.tau = 0.005          # target network soft update rate
         self.expectile = 0.7      # τ in the paper; expectile for V(s)
-        self.awr_beta = 3.0       # inverse-temperature for advantage weighting
+        self.awr_beta = 600.0     # = 3.0 / reward_scale; preserves AWR weighting under rescale
         self.reward_scale = 1.0 / 200.0  # sparse-reward normalization: rescale rew to O(1) magnitude
 
     def config(self) -> dict:
@@ -80,7 +80,7 @@ class IQLTrainer:
             "gamma": 0.99,
             "tau": 0.005,
             "expectile": 0.7,
-            "awr_beta": 3.0,
+            "awr_beta": self.awr_beta,
             "reward_scale": self.reward_scale,
             "hidden": [256, 256, 256],
             "device": str(self.device),
