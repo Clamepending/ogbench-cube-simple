@@ -72,7 +72,7 @@ class IQLTrainer:
     def config(self) -> dict:
         return {
             "algo": "iql",
-            "steps": 200_000,
+            "steps": 400_000,
             "eval_every": 20_000,
             "eval_episodes": 50,
             "batch_size": 256,
